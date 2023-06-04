@@ -1,5 +1,8 @@
-syms y(t);
+syms y(x);
 
 % trivial ODE
-ode= diff(y, t) == t
-ysolution(t)= dsolve(ode, y(0) == 1)
+% trinial ODE
+ode= diff(y, x) + (2/x)*y == exp(x^3)
+  
+% a solution can include the inital condition if you add it as the second arg
+ysolution(x)= dsolve(ode)
